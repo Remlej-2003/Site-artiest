@@ -1,0 +1,474 @@
+/* Importeer de lettertypen */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Exo+2:wght@400;700&display=swap');
+
+/* CSS-variabelen voor consistente styling */
+:root {
+    --primary-color: #FFFFFF; /* Helder Wit */
+    --secondary-color: #D8BFD8; /* Thistle (licht paars) */
+    --background-color: #1C1C2D; /* Donker Paars-Blauw */
+    --accent-color: #9370DB; /* Medium Purple */
+    --highlight-color: #4B0082; /* Indigo */
+}
+
+/* Algemene stijlen */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Exo 2', sans-serif;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+p {
+    line-height: 1.6;
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+i {
+    color: var(--accent-color);
+}
+
+/* Container */
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background: rgba(28, 28, 45, 0.9);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(147, 112, 219, 0.2);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 2em;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    position: relative;
+    font-weight: bold;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Hero Sectie */
+.hero {
+    background-image: url('images/Banner\ bytebeats.png');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    position: relative;
+    color: var(--primary-color);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(28, 28, 45, 0.6);
+}
+
+.hero .container {
+    position: absolute;
+    bottom: 30vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    text-align: center;
+}
+
+
+.hero h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.btn {
+    background: none;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 15px 30px;
+    font-size: 1em;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: var(--accent-color);
+    color: var(--background-color);
+    box-shadow: 0 0 10px var(--highlight-color), 0 0 20px var(--highlight-color), 0 0 30px var(--highlight-color);
+}
+
+/* Sectie Titels */
+section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+section p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Over Ons Sectie */
+#about .content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-top: 50px;
+}
+
+#about .text {
+    flex: 1;
+    margin: 20px;
+}
+
+#about h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+#about p, #about ul {
+    text-align: left;
+}
+
+#about ul {
+    list-style: none;
+    padding: 0;
+}
+
+#about ul li::before {
+    content: '•';
+    color: var(--highlight-color);
+    margin-right: 10px;
+}
+
+/* Artiesten Sectie */
+.artists-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.artist-item {
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.artist-item:hover {
+    transform: scale(1.05);
+}
+
+.artist-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.artist-item h3 {
+    margin-top: 15px;
+    font-size: 1.5em;
+}
+
+.artist-item p {
+    margin: 10px 0;
+}
+
+/* Releases Sectie */
+.releases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.release-item {
+    background-color: rgba(147, 112, 219, 0.1);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.release-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--highlight-color);
+}
+
+.release-item i {
+    margin-bottom: 15px;
+}
+
+.release-item h3 {
+    margin-top: 15px;
+    font-size: 1.5em;
+}
+
+.release-item p {
+    margin: 10px 0;
+}
+
+/* Events Sectie */
+.events-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.event-item {
+    background-color: rgba(147, 112, 219, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.event-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--highlight-color);
+}
+
+.event-item i {
+    margin-bottom: 15px;
+}
+
+.event-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.event-item p {
+    margin-bottom: 20px;
+}
+
+/* Merchandise Sectie */
+.merch-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.merch-item {
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.merch-item:hover {
+    transform: scale(1.05);
+}
+
+.merch-item i {
+    margin-bottom: 15px;
+}
+
+.merch-item h3 {
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #13132B;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+footer nav li {
+    margin: 0 15px;
+}
+
+footer nav a {
+    color: var(--secondary-color);
+    transition: color 0.3s;
+}
+
+footer nav a:hover {
+    color: var(--accent-color);
+}
+
+footer p {
+    margin: 10px 0;
+    color: var(--secondary-color);
+}
+
+.footer-social {
+    margin-top: 20px;
+}
+
+.footer-social a {
+    margin: 0 10px;
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.footer-social a:hover {
+    transform: scale(1.1);
+}
+
+.footer-social i {
+    color: var(--secondary-color);
+}
+
+/* Responsief Ontwerp */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        display: none;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+
+    .hero h2 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    #about .content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #about .text {
+        margin: 20px 0;
+    }
+
+    .artists-grid, .events-grid, .merch-grid {
+        flex-direction: column;
+    }
+
+    .artist-item, .event-item, .merch-item {
+        width: 100%;
+    }
+
+    /* Mobiele Navigatie Toggle */
+    .nav-toggle {
+        display: flex;
+    }
+}
+
+/* Mobiele Navigatie Toggle */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.nav-toggle span {
+    background: var(--primary-color);
+    height: 3px;
+    width: 25px;
+    margin: 4px 0;
+    transition: all 0.3s;
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
