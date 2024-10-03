@@ -1,0 +1,362 @@
+/* Importeer het futuristische lettertype */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* CSS-variabelen voor consistente styling */
+:root {
+    --primary-color: #00ffff;
+    --secondary-color: #ffffff;
+    --background-color: #0d0d0d;
+    --accent-color: #007070;
+}
+
+/* Algemene opmaak */
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    overflow-x: hidden;
+}
+
+/* Container */
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background: rgba(13, 13, 13, 0.9);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 255, 255, 0.2);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--primary-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width .3s;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Hero Sectie */
+.hero {
+    background-image: url('images/banner.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+}
+
+.hero .overlay {
+    background: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hero h2 {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px var(--primary-color);
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+}
+
+.btn {
+    background: none;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 15px 30px;
+    font-size: 1em;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: var(--primary-color);
+    color: #000;
+    box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color), 0 0 30px var(--primary-color);
+}
+
+/* Sectie Titels */
+section h2 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px var(--primary-color);
+}
+
+/* Over Sectie */
+#about .content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#about img {
+    max-width: 500px;
+    width: 100%;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+#about .text {
+    flex: 1;
+    margin: 20px;
+    font-size: 1.2em;
+    line-height: 1.8;
+}
+
+#about .text p {
+    margin-bottom: 20px;
+}
+
+/* Music Grid */
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.music-item {
+    background-color: rgba(0, 255, 255, 0.1);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.music-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.music-item h3 {
+    margin-top: 15px;
+    font-size: 1.5em;
+}
+
+.music-item p {
+    margin: 10px 0;
+}
+
+/* Tour Dates */
+.tour-dates {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.tour-item {
+    background-color: rgba(0, 255, 255, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.tour-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.tour-item p {
+    margin-bottom: 20px;
+}
+
+/* Merch Grid */
+.merch-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.merch-item {
+    width: 250px;
+    text-align: center;
+}
+
+.merch-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.merch-item h3 {
+    margin-top: 10px;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.social-links a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    text-align: center;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+.social-links img {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 10px 0;
+    color: var(--secondary-color);
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+footer nav li {
+    margin: 0 15px;
+}
+
+footer nav a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Media Queries voor Responsief Ontwerp */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+
+    .hero h2 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    #about .content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #about .text {
+        margin: 20px 0;
+    }
+
+    .tour-dates, .merch-grid {
+        flex-direction: column;
+    }
+
+    .tour-item, .merch-item {
+        width: 100%;
+    }
+}
