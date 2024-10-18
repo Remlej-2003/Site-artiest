@@ -8,6 +8,15 @@
     --background-color: #1C1C2D; /* Donker Paars-Blauw */
     --accent-color: #9370DB; /* Medium Purple */
     --highlight-color: #4B0082; /* Indigo */
+
+    /* Toegevoegde kleurvariabelen voor de music-release sectie */
+    --blue-start: #0000FF;
+    --blue-end: #4B00FF;
+    --purple-start: #8000FF;
+    --purple-end: #B400FF;
+    --red: #D10000;
+    --white: #F1F1F1;
+    --black: #131112;
 }
 
 /* Algemene stijlen */
@@ -132,7 +141,6 @@ nav a:hover::after {
     text-align: center;
 }
 
-
 .hero h2 {
     font-size: 3em;
     margin-bottom: 20px;
@@ -159,6 +167,117 @@ nav a:hover::after {
     background: var(--accent-color);
     color: var(--background-color);
     box-shadow: 0 0 10px var(--highlight-color), 0 0 20px var(--highlight-color), 0 0 30px var(--highlight-color);
+}
+
+/* Music Release Sectie */
+.music-release {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0;
+    color: var(--white);
+    background-color: var(--black);
+    overflow: hidden;
+}
+
+.music-release .background-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('your-background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.release-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.release-info {
+    flex: 1;
+    min-width: 300px;
+    margin-right: 2rem;
+}
+
+.release-info h1 {
+    font-size: 3rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-family: 'Exo 2', sans-serif;
+    color: var(--white);
+}
+
+.release-info h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--purple-end);
+}
+
+.release-date {
+    color: var(--blue-end);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.release-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background-color: var(--blue-end);
+    color: var(--white);
+    padding: 0.8rem 2rem;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--purple-end);
+}
+
+.btn-outline {
+    padding: 0.8rem 2rem;
+    border: 1px solid var(--white);
+    color: var(--white);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.release-art {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.release-art img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 /* Sectie Titels */
@@ -442,6 +561,20 @@ footer p {
     /* Mobiele Navigatie Toggle */
     .nav-toggle {
         display: flex;
+    }
+
+    /* Music Release Sectie Responsief */
+    .release-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .release-info, .release-art {
+        margin: 1rem 0;
+    }
+
+    .release-info {
+        text-align: center;
     }
 }
 
